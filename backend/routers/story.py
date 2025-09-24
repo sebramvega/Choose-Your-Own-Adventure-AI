@@ -52,7 +52,7 @@ def create_story(
         session_id=session_id
     )
 
-    return job
+    return StoryJobResponse.model_validate(job)
 
 def generate_story_task(job_id: str, theme: str, session_id: str):
     db = SessionLocal()
